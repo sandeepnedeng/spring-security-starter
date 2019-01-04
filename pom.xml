@@ -7,9 +7,21 @@
   <groupId>com.sandeep</groupId>
   <artifactId>spring-security-notepad</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <properties>
-    <spring-boot.version>1.5.12.RELEASE</spring-boot.version>
+    <spring-boot.version>1.5.18.RELEASE</spring-boot.version>
   </properties>
 
   <dependencyManagement>
@@ -39,6 +51,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.4</version>
     </dependency>
   </dependencies>
 </project>

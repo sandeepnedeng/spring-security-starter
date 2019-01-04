@@ -1,7 +1,6 @@
 package com.sandeep.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Controller {
 
     @GetMapping("/")
-    public String indexPage(Model m, @AuthenticationPrincipal User user) {
+    public String indexPage(Model m, @AuthenticationPrincipal String user) {
 
-        m.addAttribute("name", user.getUsername());
+        m.addAttribute("name", user);
 
         return "index";
     }
